@@ -1,0 +1,27 @@
+{
+  "name": "randomised-array-util",
+  "version": "0.0.0",
+  "description": "this module will clone your array and transform it into a new randomised array",
+  "main": "randomised-array.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexoconner/randomised-array-util"
+  },
+  "keywords": [
+    "array",
+    "util",
+    "utility",
+    "random",
+    "shuffle",
+    "randomised"
+  ],
+  "author": "Alexander Skrabl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexoconner/randomised-array-util/issues"
+  },
+  "homepage": "https://github.com/alexoconner/randomised-array-util"
+}
