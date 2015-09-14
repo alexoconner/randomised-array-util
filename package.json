@@ -23,5 +23,7 @@
   "bugs": {
     "url": "https://github.com/alexoconner/randomised-array-util/issues"
   },
-  "homepage": "https://github.com/alexoconner/randomised-array-util"
+  "homepage": "https://github.com/alexoconner/randomised-array-util",
+  "devDependencies": {
+  }
 }
