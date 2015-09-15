@@ -9,7 +9,8 @@ var testArray = [
     'd',
     'e',
     'f',
-    'g'
+    'g',
+    []
 ];
 
-console.log(new RandomisedArrayUtil(testArray));
+new RandomisedArrayUtil(testArray).cloneArray();
