@@ -11,9 +11,8 @@ class RandomisedArray {
 
     cloneArray() {
         // check if array has sub arrays or objects
-
         var array = this.array;
-        console.log(array);
+        this.newArray = [];
 
         if (!Array.isArray(array)) {
             console.log('no array');
@@ -30,6 +29,14 @@ class RandomisedArray {
             if (array[i].length > 1) {
                 isMultidimensional = true;
             }
+        }
+
+        // clone simple array
+        if (!containsObjects && !isMultidimensional) {
+            for (var i = 0; i < array.length; i++) {
+                this.newArray[i] = array[i];
+            }
+            return this.newArray;
         }
 
         console.log('contains objects? : ' + containsObjects);
