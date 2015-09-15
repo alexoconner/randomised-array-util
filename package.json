@@ -7,8 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./lib/ && mkdir ./lib",
     "prebuild": "npm run clean",
-    "build:js": "DEBUG=true browserify ./src/randomised-array.js -t babelify --outfile ./lib/index.js",
-    "build": "npm run build:js"
+    "build:html": "html-minifier --collapse-whitespace ./src/example.html --output ./lib/example.html",
+    "build:js": "DEBUG=true browserify ./src/randomised-array.js -t babelify --outfile ./lib/randomised-array-util.js",
+    "build:testJS": "DEBUG=true browserify ./src/example.js -t babelify --outfile ./lib/example.js",
+    "build": "npm run build:html && npm run build:testJS && npm run build:js"
   },
   "repository": {
     "type": "git",
@@ -31,8 +33,8 @@
   "devDependencies": {
     "babelify": "^6.3.0",
     "browserify": "^11.1.0",
+    "html-minifier": "^0.7.2",
     "uglifyjs": "^2.4.10"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
