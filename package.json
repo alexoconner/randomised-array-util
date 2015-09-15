@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./lib/ && mkdir ./lib",
     "prebuild": "npm run clean",
+    "watch": "parallelshell 'npm run watch:html' 'npm run watch:js'",
+    "watch:html": "watch 'npm run build:html' ./src/",
+    "watch:js": "watch 'npm run build:js && npm run build:testJS' ./src/",
     "build:html": "html-minifier --collapse-whitespace ./src/example.html --output ./lib/example.html",
     "build:js": "DEBUG=true browserify ./src/randomised-array.js -t babelify --outfile ./lib/randomised-array-util.js",
     "build:testJS": "DEBUG=true browserify ./src/example.js -t babelify --outfile ./lib/example.js",
@@ -34,7 +37,9 @@
     "babelify": "^6.3.0",
     "browserify": "^11.1.0",
     "html-minifier": "^0.7.2",
-    "uglifyjs": "^2.4.10"
+    "parallelshell": "^2.0.0",
+    "uglifyjs": "^2.4.10",
+    "watch": "^0.16.0"
   },
   "dependencies": {}
 }

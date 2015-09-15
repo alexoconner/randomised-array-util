@@ -27,7 +27,6 @@ class RandomisedArray {
         };
 
         for (var i = 0; i < array.length; i++) {
-            console.log(i, array[i]);
             if (typeof array[i] === 'object') {
                 feedback.containsObjects = true;
             }
