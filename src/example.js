@@ -14,4 +14,4 @@ var testArray = [
 
 var arrayUtil = new RandomisedArrayUtil(testArray);
 
-console.log(arrayUtil.cloneArray());
+arrayUtil.randomise();

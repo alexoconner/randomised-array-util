@@ -12,6 +12,10 @@ class RandomisedArray {
         this.newArray = [];
     }
 
+    /**
+     * Check the type of the array
+     * @returns {{containsObjects: boolean, isMultidimensional: boolean}}
+     */
     checkArrayType() {
         // works but still a bit buggy
 
@@ -38,8 +42,11 @@ class RandomisedArray {
         return feedback;
     }
 
+    /**
+     * Clone array
+     * @returns {Array}
+     */
     cloneArray() {
-        // check if array has sub arrays or objects
         var array = this.array;
 
         console.log(this.checkArrayType());
@@ -51,6 +58,39 @@ class RandomisedArray {
             }
             return this.newArray;
         }
+    }
+
+    randomNumber(min, max) {
+        if (min == null) {
+            min = 0;
+        }
+
+        return Math.floor ( Math.random() * (max - min + 1) - min );
+    }
+
+    randomise() {
+
+        // if array hasn't been cloned already we do that here.
+        if (this.newArray.length === 0) {
+            this.cloneArray();
+        }
+
+        var arrayLength = this.newArray.length;
+
+        console.log(this.randomNumber(0, arrayLength));
+
+        var i = arrayLength-1;
+        while (i > 0) {
+            var randomIndex = this.randomNumber(0, arrayLength);
+
+            i--;
+
+            var arrayTemp = this.newArray[i];
+            this.newArray[i] = this.newArray[randomIndex];
+            this.newArray[randomIndex] = arrayTemp;
+        }
+
+        console.log(this.newArray);
     }
 }
 
