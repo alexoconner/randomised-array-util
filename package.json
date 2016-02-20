@@ -2,17 +2,17 @@
   "name": "randomised-array-util",
   "version": "0.0.0",
   "description": "this module will clone your array and transform it into a new randomised array",
-  "main": "randomised-array.js",
+  "main": "lib/randomised-array.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf ./lib/ && mkdir ./lib",
+    "clean": "rm -rf ./dist/ && mkdir ./dist",
     "prebuild": "npm run clean",
     "watch": "parallelshell 'npm run watch:html' 'npm run watch:js'",
     "watch:html": "watch 'npm run build:html' ./src/",
     "watch:js": "watch 'npm run build:js && npm run build:testJS' ./src/",
-    "build:html": "html-minifier --collapse-whitespace ./src/example.html --output ./lib/example.html",
-    "build:js": "DEBUG=true browserify ./src/randomised-array.js -t babelify --outfile ./lib/randomised-array-util.js",
-    "build:testJS": "DEBUG=true browserify ./src/example.js -t babelify --outfile ./lib/example.js",
+    "build:html": "html-minifier --collapse-whitespace ./lib/example.html --output ./dist/example.html",
+    "build:js": "browserify ./lib/randomised-array.js -t babelify --outfile ./dist/randomised-array-util.js",
+    "build:testJS": "browserify ./lib/example.js -t babelify --outfile ./dist/example.js",
     "build": "npm run build:html && npm run build:testJS && npm run build:js"
   },
   "repository": {
